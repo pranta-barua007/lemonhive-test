@@ -5,7 +5,7 @@ import {
   SquaredButton,
   ButtonSpinner,
   DirectionContainer,
-} from "./button.styled";
+} from "./button.styles";
 
 export enum BUTTON_TYPE_CLASSES {
   rounded = "rounded",

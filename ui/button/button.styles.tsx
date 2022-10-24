@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SpinnerContainer } from "ui/spinner/spinner.styled";
+import { SpinnerContainer } from "ui/spinner/spinner.styles";
 
 export const BaseButton = styled.button`
   min-width: 165px;

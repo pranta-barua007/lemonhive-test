@@ -1,7 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
-import { CardContainer, CardSize, StarContainer } from "./card.styled";
-
+import { CardContainer, CardSize, StarContainer } from "./card.styles";
 
 export type CardProps = {
   imgUrl: string;
@@ -16,6 +15,7 @@ const Card: FC<CardProps> = ({ imgUrl, name, size }) => {
         src={imgUrl} 
         alt={name || 'card'} 
         layout='fill'
+        priority
       />
       {size === CardSize.big && 
       <StarContainer>
@@ -25,5 +25,7 @@ const Card: FC<CardProps> = ({ imgUrl, name, size }) => {
     </CardContainer>
   );
 };
+
+export  { CardSize } ;
 
 export default Card;
