@@ -44,6 +44,10 @@ export const SquaredButton = styled(BaseButton)`
     background-color: ${({ theme }) => theme.colors.primary};
     color: white;
     box-shadow: 0 0 14px #ccc;
+
+    div {
+      background-color: whitesmoke;
+    }
   }
 `;
 
@@ -55,7 +59,6 @@ export const ButtonSpinner = styled(SpinnerContainer)`
 export const DirectionContainer = styled.div`
   width: 14%;
   height: auto;
-  background-color: whitesmoke;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -7,7 +7,7 @@ export const NavigationContainer = styled.div`
   justify-content: space-between;
   margin-bottom: 25px;
   background-color: rgb(255, 255, 255);
-  padding: 0 100px;
+  padding: 0;
   z-index: 1;
   position: sticky;
   top: 0;
@@ -22,7 +22,7 @@ export const NavigationContainer = styled.div`
 export const LogoContainer = styled.div`
   height: 100%;
   width: 70px;
-  padding: 25px;
+  padding: 25px 0 25px;
 
   @media screen and (max-width: 800px) {
     width: 50px;

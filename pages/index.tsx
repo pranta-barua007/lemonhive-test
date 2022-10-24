@@ -1,16 +1,33 @@
 import type { NextPage } from 'next'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import styled from 'styled-components'
+import client from 'apollo-client';
+import Link from 'next/link';
+
+import { QUERY_CONFERENCES } from 'gql-requests';
+import { ConferenceType } from 'response-types';
 
 import Button, { BUTTON_TYPE_CLASSES } from 'ui/button/button.component';
 import Card, { CardSize } from 'ui/card/card.component';
 import Navbar from 'components/navbar/navbar.component';
 
-const Title = styled.h1`
-  color: red;
-`;
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await client.query({
+    query: QUERY_CONFERENCES,
+  });
 
-const Home: NextPage = () => {
+  return {
+    props: {
+      conferences: data.conferences,
+    },
+ };
+};
+
+interface HomeProps {
+  conferences: [ConferenceType]
+}
+
+const Home: NextPage<HomeProps> = ({ conferences = [] }) => {
   return (
     <>
       <Head>
@@ -23,12 +40,21 @@ const Home: NextPage = () => {
         test
       </Button>
 
-      <Card imgUrl="/hero-sm.png" size={CardSize.big}/>
+      <Card imgUrl="/hero-sm.png" size={CardSize.small}/>
+
+      {
+        conferences.map((conference, i) => 
+          <div key={i}>
+            <Link href={`conference/${conference.id}`}>
+            {conference.name}
+            </Link>
+          </div>
+        )
+      }
 
       <p>hello</p>
-      <Title>Testing</Title>
     </>
   )
 }
 
-export default Home
+export default Home;

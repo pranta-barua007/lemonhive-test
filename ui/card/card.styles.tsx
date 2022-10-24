@@ -5,7 +5,7 @@ export enum CardSize {
   big = "big",
 }
 
-interface CardContainerProps {
+type CardContainerProps = {
   size: CardSize;
 }
 
