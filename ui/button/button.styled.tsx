@@ -16,6 +16,7 @@ export const BaseButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
 export const RoundedButton = styled(BaseButton)`
@@ -32,6 +33,13 @@ export const SquaredButton = styled(BaseButton)`
   border: 2px solid transparent;
   border-radius: 8px;
 
+  div {
+    position: absolute;
+    top: 2;
+    left: 15px;
+    height: 60%;
+  }
+
   &:hover {
     background-color: ${({ theme }) => theme.colors.primary};
     color: white;
@@ -42,4 +50,22 @@ export const SquaredButton = styled(BaseButton)`
 export const ButtonSpinner = styled(SpinnerContainer)`
   width: 30px;
   height: 30px;
+`;
+
+export const DirectionContainer = styled.div`
+  width: 14%;
+  height: auto;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 2;
+    left: 6;
+    height: 60%;
+  }
 `;

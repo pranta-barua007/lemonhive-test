@@ -4,6 +4,7 @@ import {
   RoundedButton,
   SquaredButton,
   ButtonSpinner,
+  DirectionContainer,
 } from "./button.styled";
 
 export enum BUTTON_TYPE_CLASSES {
@@ -31,8 +32,14 @@ const Button: FC<ButtonProps> = ({
   ...otherProps
 }) => {
   const CustomButton = getButton(buttonType);
+
   return (
     <CustomButton disabled={isLoading} {...otherProps}>
+      {buttonType === BUTTON_TYPE_CLASSES.squared && (
+        <DirectionContainer>
+          <img src="/direction.svg" />
+        </DirectionContainer>
+      )}
       {isLoading ? <ButtonSpinner /> : children}
     </CustomButton>
   );
