@@ -66,7 +66,7 @@ const Home: NextPage<HomeProps> = ({ conferences = [] }) => {
             odit optio numquam sit, iure quam dolorem debitis.
           </HeroAbout>
           <Button>
-            buy tickets
+            buy tickets &nbsp; <img src="/up.svg" />
           </Button>
         </HomeHeroSection>
       </HomeHeroContainer>
