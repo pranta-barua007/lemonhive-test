@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { SpinnerContainer } from "ui/spinner/spinner.styles";
+import { ButtonProps } from "./button.component";
 
-export const BaseButton = styled.button`
+export const BaseButton = styled.button<ButtonProps>`
   min-width: 165px;
-  width: auto;
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
@@ -20,6 +20,7 @@ export const BaseButton = styled.button`
 `;
 
 export const RoundedButton = styled(BaseButton)`
+  width: 165px;
   background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 30px;
   border: 4px solid ${({ theme }) => theme.colors.primary};
@@ -30,8 +31,9 @@ export const RoundedButton = styled(BaseButton)`
 `;
 
 export const SquaredButton = styled(BaseButton)`
-  border: 2px solid transparent;
+  border: 1.6px solid whitesmoke;
   border-radius: 8px;
+  background-color: ${({ isActive }) => (isActive ? '#FFC93E' : 'transparent')};
 
   div {
     position: absolute;
@@ -42,6 +44,7 @@ export const SquaredButton = styled(BaseButton)`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.primary};
+    border-color: ${({ theme }) => theme.colors.primary};
     color: white;
     box-shadow: 0 0 14px #ccc;
 
@@ -51,7 +54,7 @@ export const SquaredButton = styled(BaseButton)`
   }
 `;
 
-export const ButtonSpinner = styled(SpinnerContainer)`
+export const ButtonSpinner= styled(SpinnerContainer)`
   width: 30px;
   height: 30px;
 `;

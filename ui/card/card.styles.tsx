@@ -13,7 +13,6 @@ export const CardContainer = styled.div<CardContainerProps>`
   width: ${(props) => (props.size === CardSize.small ? "10vw" : "20vw")};
   display: flex;
   flex-direction: column;
-  height: 350px;
   align-items: center;
   position: relative;
 
@@ -25,11 +24,8 @@ export const CardContainer = styled.div<CardContainerProps>`
   }
 
   img {
-    width: 100%;
-    height: 95%;
     object-fit: cover;
-    border: 1px transparent;
-    border-radius: 8px;
+    border-radius: 2rem;
   }
 
   &:hover {

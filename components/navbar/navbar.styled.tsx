@@ -23,6 +23,7 @@ export const LogoContainer = styled.div`
   height: 100%;
   width: 70px;
   padding: 25px 0 25px;
+  cursor: pointer;
 
   @media screen and (max-width: 800px) {
     width: 50px;

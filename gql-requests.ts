@@ -14,9 +14,10 @@ query Conference($id: ID!) {
   conference(id: $id) {
     id
     name
+    slogan
     organizers {
       name
-      aboutShort
+      about
       company
       image {
         url
@@ -24,7 +25,7 @@ query Conference($id: ID!) {
     }
     speakers {
       name
-      aboutShort
+      about
       company
       image {
         url
@@ -50,7 +51,7 @@ query Conference($id: ID!) {
     }
     sponsors {
       name
-      aboutShort
+      about
       company
       image {
         url

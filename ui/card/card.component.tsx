@@ -5,16 +5,19 @@ import { CardContainer, CardSize, StarContainer } from "./card.styles";
 export type CardProps = {
   imgUrl: string;
   name?: string;
-  size?: CardSize
+  size?: CardSize;
+  height: number;
+  width: number;
 };
 
-const Card: FC<CardProps> = ({ imgUrl, name, size }) => {
+const Card: FC<CardProps> = ({ imgUrl, name, size, height, width }) => {
   return (
     <CardContainer size={size || CardSize.small}>
       <Image 
         src={imgUrl} 
         alt={name || 'card'} 
-        layout='fill'
+        height={height}
+        width={width}
         priority
       />
       {size === CardSize.big && 

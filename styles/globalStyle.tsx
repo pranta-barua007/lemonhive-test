@@ -9,13 +9,14 @@ export const GlobalStyle = createGlobalStyle`
 
   html,
     body {
-    padding: 0 60px;
+    padding: 0 6rem;
     margin: 0;
     font-family: 'Inter', sans-serif;
     }
 
-    h1 {
-        color: yellow !important; // the important is just to show that the style works!
+    p {
+      color: rgba(10, 20, 47, 0.8);
+      opacity: 0.8;
     }
 
   // anything else you would like to include

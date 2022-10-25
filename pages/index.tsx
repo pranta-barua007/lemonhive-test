@@ -10,6 +10,7 @@ import { ConferenceType } from 'response-types';
 import Button, { BUTTON_TYPE_CLASSES } from 'ui/button/button.component';
 import Card, { CardSize } from 'ui/card/card.component';
 import Navbar from 'components/navbar/navbar.component';
+import { HeroAbout, HeroTitle, HomeHeroContainer, HomeHeroSection } from 'styles/home.styles';
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({
@@ -36,23 +37,49 @@ const Home: NextPage<HomeProps> = ({ conferences = [] }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <Button isLoading={false} buttonType={BUTTON_TYPE_CLASSES.squared}>
-        test
-      </Button>
 
-      <Card imgUrl="/hero-sm.png" size={CardSize.small}/>
-
+      <HomeHeroContainer>
+        <HomeHeroSection>
+          <HeroTitle>React</HeroTitle>
+          <HeroTitle>Conference</HeroTitle>
+        </HomeHeroSection>
+        <HomeHeroSection>
+          <Card 
+            imgUrl='/hero-bg.png' 
+            size={CardSize.big}
+            width={550}
+            height={560}
+          />
+        </HomeHeroSection>
+        <HomeHeroSection>
+        <Card 
+          imgUrl="/hero-sm.png" 
+          size={CardSize.small}
+          width={329.01}
+          height={419.11}
+        />
+        </HomeHeroSection>
+        <HomeHeroSection>
+          <HeroAbout>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Harum in libero repudiandae sapiente nesciunt blanditiis 
+            odit optio numquam sit, iure quam dolorem debitis.
+          </HeroAbout>
+          <Button>
+            buy tickets
+          </Button>
+        </HomeHeroSection>
+      </HomeHeroContainer>
+      <h3>Links - work in progress</h3>
       {
         conferences.map((conference, i) => 
           <div key={i}>
             <Link href={`conference/${conference.id}`}>
-            {conference.name}
+            {conference.name + " -> click me"}
             </Link>
           </div>
         )
       }
-
-      <p>hello</p>
     </>
   )
 }

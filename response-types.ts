@@ -1,16 +1,16 @@
 export type ConferenceType = {
     id: string,
     name: string,
+    slogan?: string
   }
 
 type Image = {
-    url: string
+    url?: string
 }
 
 export type ContactType = {
     name: string,
     about?: string,
-    aboutShort?: string,
     company?: string | null,
     image: Image
 }
