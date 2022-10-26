@@ -21,6 +21,10 @@ export const CardContainer = styled.div<CardContainerProps>`
     position: absolute;
     bottom: -68px;
     left: -68px;
+
+    @media screen and (max-width: 800px) {
+      left: 220px;
+    }
   }
 
   img {

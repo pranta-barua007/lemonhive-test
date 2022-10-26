@@ -20,15 +20,32 @@ export const HomeHeroContainer = styled.div`
   & > div:nth-child(2) {
     grid-area: side;
     justify-content: end;
+
+    @media screen and (max-width: 800px) {
+      align-items: start;
+    }
   }
 
   & > div:nth-child(3) {
     grid-area: left;
     align-items: end;
+
+    @media screen and (max-width: 800px) {
+      margin-top: 1rem;
+      align-items: start;
+
+      img {
+        height: 220px !important;
+      }
+    }
   }
 
   & > div:nth-child(4) {
     grid-area: right;
+
+    @media screen and (max-width: 800px) {
+      align-items: center;
+    }
   }
 
   @media screen and (max-width: 800px) {
