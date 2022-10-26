@@ -33,9 +33,9 @@ export const ConferenceContainer = styled.div`
     padding: 0.5rem 1rem;
     grid-template-columns: 1fr;
     grid-template-areas: 
-   "head head head head"
-   "right right right right"
-   "left left left left";
+   "head"
+   "right"
+   "left";
   }
 `;
 
