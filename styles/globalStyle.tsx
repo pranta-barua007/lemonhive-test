@@ -4,7 +4,7 @@ export const GlobalStyle = createGlobalStyle`
   // this is the shared style
 
   * {
-    box-sizing: inherit;
+    box-sizing: border-box;
   }
 
   html,
@@ -12,6 +12,10 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0 6rem;
     margin: 0;
     font-family: 'Inter', sans-serif;
+
+    @media screen and (max-width: 800px) {
+      padding: 0;
+    }
     }
 
     p {
@@ -23,9 +27,9 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const theme = {
-    colors: {
-      primary: '#FFC93E',
-      secondary: '#725114',
-      third: '#111D5E'
-    },
-  }
+  colors: {
+    primary: "#FFC93E",
+    secondary: "#725114",
+    third: "#111D5E",
+  },
+};

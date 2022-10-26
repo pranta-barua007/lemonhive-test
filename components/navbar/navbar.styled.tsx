@@ -13,7 +13,7 @@ export const NavigationContainer = styled.div`
   top: 0;
 
   @media screen and (max-width: 800px) {
-    height: 60px;
+    height: auto;
     padding: 10px;
     margin-bottom: 20px;
   }
@@ -26,7 +26,7 @@ export const LogoContainer = styled.div`
   cursor: pointer;
 
   @media screen and (max-width: 800px) {
-    width: 50px;
+    width: auto;
     padding: 0px;
   }
 `;
@@ -39,7 +39,7 @@ export const NavLinks = styled.div`
   justify-content: space-evenly;
   
   @media screen and (max-width: 800px) {
-    width: 80%;
+    display: none;
   }
 `;
 

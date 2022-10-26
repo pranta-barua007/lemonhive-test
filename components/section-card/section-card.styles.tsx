@@ -3,7 +3,10 @@ import styled from "styled-components";
 export const SectionCardContainer = styled.div`
     display: grid;
     grid-template-columns: 140px 2fr 1fr;
-    grid-gap: 16px;
+    grid-template-areas: 
+     "image title company"
+     "image about about";
+    grid-gap: 1rem;
     width: 800px;
     height: auto;
     padding: 1rem;
@@ -11,36 +14,46 @@ export const SectionCardContainer = styled.div`
     border-radius: 16px;
 
     & > div:nth-child(1) {
-        grid-column: span 1;
-        grid-row: span 4;
+        grid-area: image;
+
+        @media screen and (max-width: 800px) {
+            img {
+                width: 320px !important;
+            }
+        }
     }
 
     & > div:nth-child(2) {
-        grid-column-start: 2;
-        grid-column-end: 3;
-        grid-row: span 2;
+        grid-area: title;
         align-items: center;
     }
 
     & > div:nth-child(3) {
-        grid-column-start: 3;
-        grid-column-end: 4;
-        grid-row: span 2;
+        grid-area: company;
         background: transparent;
         justify-content: end;
     }
 
     & > div:nth-child(4) {
-        grid-column-start: 2;
-        grid-column-end: 4;
+        grid-area: about;
         overflow: hidden;
         text-overflow: ellipsis;
-        align-items: center;
+        align-items: start;
         
         span {
             height: 40px;
             color: unset;
         }
+    }
+
+    @media screen and (max-width: 800px) {
+        width: auto;
+        padding: 1rem;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+       "image image image"
+       "title company company"
+       "about about about";
     }
 `;
 

@@ -3,7 +3,8 @@ import { SpinnerContainer } from "ui/spinner/spinner.styles";
 import { ButtonProps } from "./button.component";
 
 export const BaseButton = styled.button<ButtonProps>`
-  min-width: 165px;
+  width: 240px;
+  min-width: 180px;
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
@@ -20,7 +21,6 @@ export const BaseButton = styled.button<ButtonProps>`
 `;
 
 export const RoundedButton = styled(BaseButton)`
-  width: 165px;
   background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 30px;
   border: 4px solid ${({ theme }) => theme.colors.primary};

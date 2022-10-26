@@ -31,6 +31,15 @@ export const HomeHeroContainer = styled.div`
     grid-area: right;
   }
 
+  @media screen and (max-width: 800px) {
+    padding: 0.5rem 1rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+   "head"
+   "side"
+   "left"
+   "right";
+  }
 `;
 
 export const HomeHeroSection = styled.div`
@@ -42,6 +51,10 @@ export const HomeHeroSection = styled.div`
 export const HeroTitle = styled.h1`
   font-size: 120px;
   line-height: 0px;
+
+  @media screen and (max-width: 800px) {
+    font-size: 54px;
+  }
 `;
 
 export const HeroAbout = styled.p`

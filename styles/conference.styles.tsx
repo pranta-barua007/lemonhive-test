@@ -2,23 +2,40 @@ import styled from "styled-components";
 
 export const ConferenceContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  grid-template-columns: repeat(5, minmax(220px, 1fr));
   grid-gap: 16px;
+  grid-template-areas: 
+   "head head head head"
+   "right left left left";
   padding: 1rem;
 
   & > div:nth-child(1) {
-    grid-column: 1 / 65;
+    grid-area: head;
   }
 
   & > div:nth-child(2) {
-    grid-column: 220px;
-    align-items: end;
+    grid-area: right;
+    align-items: start;
+
+    @media screen and (max-width: 800px) {
+      flex-direction: row;
+      overflow-x: scroll;
+    }
   }
 
   & > div:nth-child(3) {
     background-color: whitesmoke;
-    grid-column: 2 / 65;
+    grid-area: left;
     padding: 1rem; 
+  }
+
+  @media screen and (max-width: 800px) {
+    padding: 0.5rem 1rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+   "head head head head"
+   "right right right right"
+   "left left left left";
   }
 `;
 
@@ -31,6 +48,10 @@ export const ConferenceSection = styled.div`
 export const ConferenceScrollableSection = styled(ConferenceSection)`
   height: 50vh;
   overflow: auto;
+
+  @media screen and (max-width: 800px) {
+    margin-bottom: 3rem;
+  }
 `;
 
 export const ConferenceTitleInfo = styled.h2`
