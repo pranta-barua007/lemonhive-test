@@ -11,9 +11,14 @@ export const HomeHeroContainer = styled.div`
 
   & > div:nth-child(1) {
    grid-area: head;
+   gap: unset;
    
    & > h1 {
     text-align: right;
+   }
+
+   @media screen and (max-width: 800px) {
+    padding-right: 4rem;
    }
   }
 
@@ -45,6 +50,8 @@ export const HomeHeroContainer = styled.div`
 
     @media screen and (max-width: 800px) {
       align-items: center;
+      text-align: left;
+      gap: unset;
     }
   }
 
@@ -53,9 +60,9 @@ export const HomeHeroContainer = styled.div`
     grid-template-columns: 1fr;
     grid-template-areas: 
    "head"
+   "right"
    "side"
-   "left"
-   "right";
+   "left";
   }
 `;
 
@@ -66,15 +73,15 @@ export const HomeHeroSection = styled.div`
 `;
 
 export const HeroTitle = styled.h1`
-  font-size: 120px;
+  font-size: 7.5rem;
   line-height: 0px;
 
   @media screen and (max-width: 800px) {
-    font-size: 54px;
+    font-size: 3.2rem;
   }
 `;
 
 export const HeroAbout = styled.p`
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
 `

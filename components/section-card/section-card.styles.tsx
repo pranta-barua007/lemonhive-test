@@ -36,11 +36,12 @@ export const SectionCardContainer = styled.div`
 
     & > div:nth-child(4) {
         grid-area: about;
-        overflow: hidden;
-        text-overflow: ellipsis;
         align-items: start;
         
         span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
             height: 40px;
             color: unset;
         }
